@@ -96,7 +96,7 @@ This framework makes use of the Redis Cluster framework. This allows for the use
 
 ## Example Usage
 
-This is an example of how the system would be started with the provided example configuration/implementation files.
+This is an example of how the system would be started on a single node using one executor and one request generation node.
 
 First, create a virtual environment and install all required packages. Required python packages for the framework can be installed via the requirements.txt file, however, user-specific data/model implementations may require extra package installations.
 
