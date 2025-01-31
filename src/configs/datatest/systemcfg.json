@@ -1,0 +1,37 @@
+{
+    "seed" : 0,
+    "duration-in-secs" : 40,
+    "scheduler-sleep" : 0.500,
+    "data-aware" : false,
+    "scheduler-type" : "grouped-priority",
+    "compute-nodes" : 
+    [
+        {
+            "name" : "csel-cuda1",
+            "ip-address" : "csel-cuda-01.cselabs.umn.edu",
+            "server-port" : "2227"
+        },
+        {
+            "name" : "csel-cuda3",
+            "ip-address" : "csel-cuda-03.cselabs.umn.edu",
+            "server-port" : "2227"
+        },
+        {
+            "name" : "cs-geeta",
+            "ip-address" : "cs-u-geeta.cs.umn.edu",
+            "server-port" : "2227"
+        }
+    ],
+    "redis-nodes" :
+    [
+        {
+            "ip-address" : "cs-u-geeta.cs.umn.edu",
+            "ports" : ["2223","2224","2225"]
+        }
+    ],
+    "scheduler-node" :
+    {
+        "ip-address" : "csel-cuda-01.cselabs.umn.edu",
+        "port" : "2222"
+    }
+} 

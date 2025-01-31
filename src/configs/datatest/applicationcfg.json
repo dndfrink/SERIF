@@ -1,0 +1,125 @@
+{
+    "applications": [
+        {
+            "name": "falldetection",
+            "sla-latency": 1.0,
+            "sample-duration": 4,
+            "utility-matrix": [[1.0, -0.1],[-1.0, 1.0]],
+            "prior": [0.9, 0.1],
+            "model-profiles": [
+                {
+                    "name": "x3d_s",
+                    "use-profile": true,
+                    "modality" : "video",
+                    "cmat": [[1004.0, 8.0], [11.0, 17.0]],
+                    "latencies" : {
+                        "cs-geeta" : [0.009, 0.013],
+                        "csel-cuda1" : [0.009, 0.013],
+                        "csel-cuda3" : [0.009, 0.013] 
+                    } 
+                },
+                {
+                    "name": "x3d_m",
+                    "use-profile": false,
+                    "modality" : "video",
+                    "cmat": [[974.0, 10.0], [4.0, 20.0]],
+                    "latencies" : {
+                        "cs-geeta" : [0.014, 0.014],
+                        "csel-cuda1" : [0.014, 0.014],
+                        "csel-cuda3" : [0.014, 0.014] 
+                    },
+                    "model-data": "/home/cs-geeta/wolfr046/video-sim/pipe2/x3d_m.ckpt",
+                    "redis-key": "x3d_m"
+                },
+                {
+                    "name": "x3d_l",
+                    "use-profile": false,
+                    "modality" : "video",
+                    "cmat": [[972.0, 11.0], [0.0, 25.0]],
+                    "latencies" : {
+                        "cs-geeta" : [0.048, 0.024],
+                        "csel-cuda1" : [0.048, 0.024],
+                        "csel-cuda3" : [0.048, 0.024] 
+                    },
+                    "model-data": "/home/cs-geeta/wolfr046/video-sim/pipe2/x3d_l.ckpt",
+                    "redis-key": "x3d_l"
+                },
+                {
+                    "name": "MiniRocket",
+                    "use-profile": true,
+                    "modality" : "sensor",
+                    "cmat": [[51010.0, 492.0], [234.0, 787.0]],
+                    "latencies" : {
+                        "cs-geeta" : [0.005, 0.001],
+                        "csel-cuda1" : [0.005, 0.001],
+                        "csel-cuda3" : [0.005, 0.001] 
+                    }
+                },
+                {
+                    "name": "FusionModel",
+                    "use-profile": true,
+                    "modality" : "sensor",
+                    "cmat": [[51010.0, 492.0], [234.0, 787.0]],
+                    "latencies" : {
+                        "cs-geeta" : [0.005, 0.001],
+                        "csel-cuda1" : [0.005, 0.001],
+                        "csel-cuda3" : [0.005, 0.001] 
+                    }
+                }
+            ]
+        },
+        {
+            "name" : "wakeword",
+            "sla-latency" : 1.0,
+            "sample-duration" : 3,
+            "utility-matrix" : [[1.0,-1.0],[-1.0,1.0]],
+            "prior" : [0.8,0.2],
+            "model-profiles" : [
+                {
+                    "name": "HowlRes8",
+                    "use-profile": true,
+                    "modality" : "audio",
+                    "cmat": [[78.0, 0.0], [2.0, 20.0]],
+                    "latencies" : {
+                        "cs-geeta" : [0.015, 0.02],
+                        "csel-cuda1" : [0.015, 0.02],
+                        "csel-cuda3" :  [0.015, 0.02]
+                    }
+                },
+                {
+                    "name": "HowlLtsm",
+                    "use-profile": true,
+                    "modality" : "audio",
+                    "cmat": [[75.0, 0.0], [5.0, 20.0]],
+                    "latencies" : {
+                        "cs-geeta" : [0.005, 0.02],
+                        "csel-cuda1" : [0.005, 0.02],
+                        "csel-cuda3" :  [0.005, 0.02]
+                    }
+                },
+                {
+                    "name": "HowlLas",
+                    "use-profile": true,
+                    "modality" : "audio",
+                    "cmat": [[77.0, 0.0], [3.0, 20.0]],
+                    "latencies" : {
+                        "cs-geeta" : [0.01, 0.02],
+                        "csel-cuda1" : [0.01, 0.02],
+                        "csel-cuda3" :  [0.01, 0.02]
+                    }
+                },
+                {
+                    "name": "HowlMobileNet",
+                    "use-profile": true,
+                    "modality" : "audio",
+                    "cmat": [[77.0, 0.0], [3.0, 20.0]],
+                    "latencies" : {
+                        "cs-geeta" : [0.01, 0.02],
+                        "csel-cuda1" : [0.01, 0.02],
+                        "csel-cuda3" :  [0.01, 0.02]
+                    }
+                }
+            ]
+        } 
+    ]
+}

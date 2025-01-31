@@ -1,0 +1,109 @@
+{
+    "num-groups" : 40,
+    "data-modalities" :
+    [
+        {
+            "name" : "video",
+            "use-synthetic-data" : false,
+            "synthetic-shape" : [3,16,320,568],
+            "cache-entry-size" : 70000000,
+            "retrieval-latencies" : {
+                "cs-geeta" : 0.3,
+                "csel-cuda1" : 1.7,
+                "csel-cuda3" : 1.7
+            }
+        },
+        {
+            "name" : "audio",
+            "use-synthetic-data" : true,
+            "synthetic-shape" : [16000],
+            "cache-entry-size" : 120000,
+            "retrieval-latencies" : {
+                "cs-geeta" : 0.005,
+                "csel-cuda1" : 0.007,
+                "csel-cuda3" : 0.016
+            }
+        },
+        {
+            "name" : "sensor",
+            "use-synthetic-data" : true,
+            "synthetic-shape" : [9,200],
+            "cache-entry-size" : 15000,
+            "retrieval-latencies" : {
+                "cs-geeta" : 0.0002,
+                "csel-cuda1" : 0.003,
+                "csel-cuda3" : 0.013
+            }
+        }
+    ],
+
+    "servers" : 
+    [
+        {
+            "name" : "cs-geeta",
+            "ip-address" : "cs-u-geeta.cs.umn.edu",
+            "port" : "2228",
+            "workers" : 5,
+            "cache-entries-per-modality" : {
+                "default" : 17
+            },
+            "streams" : {
+                "video" : {
+                    "0" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "1" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "2" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "3" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "4" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "5" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "6" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "7" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "8" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "9" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "10" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "11" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "12" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "13" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "14" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "15" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "16" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "17" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "18" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4",
+                    "19" : "/home/cs-geeta/frink021/sneakpeek-data/fall.mp4"
+                }
+            }
+        },
+        {
+            "name" : "csel-cuda1",
+            "ip-address" : "csel-cuda-01.cselabs.umn.edu",
+            "port" : "2228",
+            "workers" : 6,
+            "cache-entries-per-modality" : {
+                "default" : 17
+            },
+            "streams" : {
+                "video" : {
+                    "20" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "21" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "22" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "23" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "24" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "25" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "26" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "27" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "28" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "29" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "30" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "31" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "32" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "33" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "34" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "35" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "36" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "37" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "38" : "/home/frink021/sneakpeek-data/fall.mp4",
+                    "39" : "/home/frink021/sneakpeek-data/fall.mp4"
+                }
+            }
+        }
+    ]
+}

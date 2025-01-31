@@ -1,0 +1,9 @@
+numpy>=2.1.3
+torch>=2.5.1
+torchmetrics>=1.6.0
+lightning>=2.4.0
+pytorchvideo>=0.1.5
+torchvision>=0.20.1
+opencv-python
+redis
+fasteners
